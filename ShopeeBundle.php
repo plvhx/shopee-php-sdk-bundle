@@ -12,11 +12,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class ShopeeBundle extends Bundle
 {
-	/**
-	 * {@inheritdoc}
-	 */
-	public function build(ContainerBuilder $container)
-	{
-		parent::build($container);
-	}
+    /**
+     * {@inheritdoc}
+     */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+    }
 }
