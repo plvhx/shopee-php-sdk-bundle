@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	       xsi:schemaLocation="http://symfony.com/schema/dic/services/ https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+	<services>
+		<service id="Gandung\Shopee\ServiceFactory" class="Gandung\Shopee\ServiceFactory">
+			<argument>%shopee.partner_key%</argument>
+			<argument>%shopee.sandboxed%</argument>
+		</service>
+
+		<service id="shopee.sdk.service_factory" alias="Gandung\Shopee\ServiceFactory" />
+
+		<service id="Gandung\Shopee\Service\Discount" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getDiscount" />
+		</service>
+
+		<service id="shopee.sdk.service.discount" alias="Gandung\Shopee\Service\Discount" public="true" />
+
+		<service id="Gandung\Shopee\Service\FirstMileTracking" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getFirstMileTracking" />
+		</service>
+
+		<service id="shopee.sdk.service.first_mile_tracking" alias="Gandung\Shopee\Service\FirstMileTracking" public="true" />
+
+		<service id="Gandung\Shopee\Service\Image" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getImage" />
+		</service>
+
+		<service id="shopee.sdk.service.image" alias="Gandung\Shopee\Service\Image" public="true" />
+
+		<service id="Gandung\Shopee\Service\Item" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getItem" />
+		</service>
+
+		<service id="shopee.sdk.service.item" alias="Gandung\Shopee\Service\Item" public="true" />
+
+		<service id="Gandung\Shopee\Service\Logistics" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getLogistics" />
+		</service>
+
+		<service id="shopee.sdk.service.logistics" alias="Gandung\Shopee\Service\Logistics" public="true" />
+
+		<service id="Gandung\Shopee\Service\Orders" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getOrders" />
+		</service>
+
+		<service id="shopee.sdk.service.orders" alias="Gandung\Shopee\Service\Orders" public="true" />
+
+		<service id="Gandung\Shopee\Service\Payment" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getPayment" />
+		</service>
+
+		<service id="shopee.sdk.service.payment" alias="Gandung\Shopee\Service\Payment" public="true" />
+
+		<service id="Gandung\Shopee\Service\PublicService" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getPublicService" />
+		</service>
+
+		<service id="shopee.sdk.service.public_service" alias="Gandung\Shopee\Service\PublicService" public="true" />
+
+		<service id="Gandung\Shopee\Service\Returns" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getReturns" />
+		</service>
+
+		<service id="shopee.sdk.service.returns" alias="Gandung\Shopee\Service\Returns" public="true" />
+
+		<service id="Gandung\Shopee\Service\Shop" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getShop" />
+		</service>
+
+		<service id="shopee.sdk.service.shop" alias="Gandung\Shopee\Service\Shop" public="true" />
+
+		<service id="Gandung\Shopee\Service\ShopCategory" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getShopCategory" />
+		</service>
+
+		<service id="shopee.sdk.service.shop_category" alias="Gandung\Shopee\Service\ShopCategory" public="true" />
+
+		<service id="Gandung\Shopee\Service\TopPicks" public="true">
+			<factory service="Gandung\Shopee\ServiceFactory" method="getTopPicks" />
+		</service>
+
+		<service id="shopee.sdk.service.top_picks" alias="Gandung\Shopee\Service\TopPicks" public="true" />
+	</services>
+</container>
